@@ -1,0 +1,12 @@
+function fearNotLetter(str) {
+        var firstLtrUnicode = str.charCodeAt(0),
+       lastLtrUnicode = str.charCodeAt(str.length - 1);
+        var holder = [];
+      for (var i=firstLtrUnicode; i<=lastLtrUnicode; i++) {
+        holder.push(String.fromCharCode(i)); }
+        var finalStr = holder.join('');
+        if ( finalStr === str ) { return undefined; }
+        else { return holder.filter( function(letter) {
+     return str.split('').indexOf(letter) === -1;
+        }).join(''); } }
+fearNotLetter("abce");
